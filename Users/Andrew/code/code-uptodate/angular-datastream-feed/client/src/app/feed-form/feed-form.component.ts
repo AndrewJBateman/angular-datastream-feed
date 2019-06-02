@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./feed-form.component.css']
 })
 export class FeedFormComponent implements OnInit {
-  private isSending: boolean;
   private httpClient: HttpClient;
 
+  public isSending: boolean;
   public content: string;
   public errorMsg: string;
   public infoMsg: string;
@@ -19,15 +19,19 @@ export class FeedFormComponent implements OnInit {
     this.httpClient = http;
   }
 
+  // send request to backend and change info message depending on status.
   submit() {
     this.errorMsg = '';
     this.isSending = true;
     this.infoMsg = 'Processing your request..wait a second';
 
     this.http
-      .post('http://localhost:3000/submit', {title: this.title, body: this.content})
+      .post('http://localhost:3000/submit', {
+        title: this.title,
+        body: this.content,
+      })
       .toPromise()
-      .then((data: {message: string, status: boolean}) => {
+      .then((data: { message: string; status: boolean }) => {
         this.infoMsg = data.message;
         setTimeout(() => {
           this.infoMsg = '';
@@ -45,7 +49,6 @@ export class FeedFormComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
