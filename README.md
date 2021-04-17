@@ -1,8 +1,7 @@
 # Angular Datastream Feed
 
-Angular 8 app that adds a realtime post feed to a website using a [Pusher](https://pusher.com/) channel.
-
-It includes a simple Node server that will process the posts published by users of the website. The server will perform data validation  and will prevent duplication of post titles. It will then publish the post to a Pusher Channel in realtime.
+* Angular app that adds a realtime post feed to a website using a [Pusher](https://pusher.com/) channel.
+* It includes a simple Node server that will process the posts published by users of the website. The server will perform data validation and will prevent duplication of post titles. It will then publish the post to a Pusher Channel in realtime.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -28,38 +27,26 @@ It includes a simple Node server that will process the posts published by users 
 
 ## Technologies
 
-* [Angular framework v8.0.0](https://angular.io/)
-
-* [Angular CLI v8.0.1](https://cli.angular.io/).
-
-* Real-time communication scalable features added with [pusher-js v4.4.0](https://pusher.com/)
-
-* server backend using [Node.js v10.15.3 LTS](https://nodejs.org/en/)
+* [Angular framework v11](https://angular.io/)
+* [Angular CLI v11](https://cli.angular.io/).
+* Real-time communication scalable features added with [pusher-js](https://pusher.com/)
+* server backend using [Node.js v14 LTS](https://nodejs.org/en/)
 
 ## Setup
-
-This app consists of a client and a server.
 
 ### Client setup
 
 * From the directory root, navigate to the client directory with `cd client`.
-
 * Install dependencies with npm install. (Ensure tar v4.4.8 or greater is used)
-
-* in Client directory: type `npm i typescript@3.4.1 --save-dev --save-exact` to avoid compilation error.
-
+* in Client directory: type `npm i typescript@4.0.5 --save-dev --save-exact` to avoid compilation error.
 * Update src/environment file with your [PUSHER_KEY](https://dashboard.pusher.com/).
-
 * Run app using `ng serve` then navigate to `http://localhost:4200/`.
 
 ### Server setup
 
 * From the directory root, navigate to the server directory with `cd server`.
-
 * Install dependencies with npm install.
-
 * Update variables.env file with your [PUSHER_KEY](https://dashboard.pusher.com/).
-
 * Run app using `node index.js` then navigate to `http://localhost:3000/`.
 
 ## Code Examples
@@ -101,18 +88,19 @@ This app consists of a client and a server.
 
 * When a post is created in the 'new' route it will appear in the 'feed' route, due to the way the Pusher channel is set up.
 
-* Client updated to latest Angular version 8. All dependencies updated, zero vulnerabilities.
-
 ## Status & To-Do List
 
-* Status: Client working. Server partially working - compiles but does not show feeds.
-
+* Status: Client and Server dependencies updated, zero vulnerabilities. Client working. Server partially working - compiles but does not show feeds.
 * To-Do: fix missing title on dashboard page and add functionality. Correct date format. Add images to placeholder in feed.component.html. Localhost://3000 only shows `{"service": "Pusher activity feed API"}` - investigate why `/submit` does not work.
 
 ## Inspiration
 
-[Lanre Adelowo's tutorial: BUILD A LIVE ACTIVITY FEED WITH ANGULAR 7](https://pusher.com/tutorials/live-feed-angular-7),
+* [Lanre Adelowo's tutorial: BUILD A LIVE ACTIVITY FEED WITH ANGULAR 7](https://pusher.com/tutorials/live-feed-angular-7),
 
-## Contact
+## :file_folder: License
 
-Created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
+* This project is licensed under the terms of the MIT license.
+
+## :envelope: Contact
+
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
