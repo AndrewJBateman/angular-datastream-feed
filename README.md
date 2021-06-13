@@ -2,8 +2,12 @@
 
 * Angular app that adds a realtime post feed to a website using a [Pusher](https://pusher.com/) channel.
 * It includes a simple Node server that will process the posts published by users of the website. The server will perform data validation and will prevent duplication of post titles. It will then publish the post to a Pusher Channel in realtime.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/angular-datastream-feed?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/angular-datastream-feed?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/angular-datastream-feed?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/angular-datastream-feed?style=plastic)
 
 ## Table of contents
 
