@@ -11,14 +11,19 @@
 
 ## Table of contents
 
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
+* [:zap: Angular Datastream Feed](#zap-angular-datastream-feed)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:wrench: Testing](#wrench-testing)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:cool: Features](#cool-features)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
+  * [:envelope: Contact](#envelope-contact)
 
 ## General info
 
@@ -31,18 +36,17 @@
 
 ## Technologies
 
-* [Angular framework v11](https://angular.io/)
-* [Angular CLI v11](https://cli.angular.io/).
-* Real-time communication scalable features added with [pusher-js](https://pusher.com/)
-* server backend using [Node.js v14 LTS](https://nodejs.org/en/)
+* [Angular framework v13](https://angular.io/)
+* [Angular CLI v13](https://cli.angular.io/).
+* Real-time communication scalable features added with [pusher-js v7](https://pusher.com/)
+* server backend using [Node.js v16 LTS](https://nodejs.org/en/)
 
 ## Setup
 
 ### Client setup
 
 * From the directory root, navigate to the client directory with `cd client`.
-* Install dependencies with npm install. (Ensure tar v4.4.8 or greater is used)
-* in Client directory: type `npm i typescript@4.0.5 --save-dev --save-exact` to avoid compilation error.
+* Install dependencies with npm install.
 * Update src/environment file with your [PUSHER_KEY](https://dashboard.pusher.com/).
 * Run app using `ng serve` then navigate to `http://localhost:4200/`.
 
@@ -95,7 +99,7 @@
 ## Status & To-Do List
 
 * Status: Client and Server dependencies updated, zero vulnerabilities. Client working. Server partially working - compiles but does not show feeds.
-* To-Do: fix missing title on dashboard page and add functionality. Correct date format. Add images to placeholder in feed.component.html. Localhost://3000 only shows `{"service": "Pusher activity feed API"}` - investigate why `/submit` does not work.
+* To-Do: Add functionality. Correct date format. Add images to placeholder in feed.component.html. Localhost://3000 only shows `{"service": "Pusher activity feed API"}` - investigate why `/submit` does not work.
 
 ## Inspiration
 
