@@ -1,0 +1,20 @@
+<div class="three-across">
+  <div>
+    <label for="subReddit">Search reddit.com/r/</label>
+    <select id="subReddit" [formControl]="subReddit">
+      <option *ngFor="let sr of subReddits" [value]="sr">
+        {{ sr }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <label for="search">for images containing:</label>
+    <input id="search" type="text" [formControl]="search" />
+  </div>
+</div>
+
+<div>
+  <div class="box" *ngFor="let post of results | async">
+    <img [src]="post.thumbnail" [alt]="post.title" />
+  </div>
+</div>
