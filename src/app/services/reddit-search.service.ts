@@ -6,23 +6,18 @@ import { map } from 'rxjs/operators';
 import { RedditResult } from '../interfaces/result';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RedditImageSearchService {
   constructor(private http: HttpClient) {}
 
-  search(
-    subReddit: string,
-    search: string
-  ): Observable<RedditResult[]> {
+  search(subReddit: string, search: string): Observable<RedditResult[]> {
     const url =
       'https://www.reddit.com/r/' +
       subReddit +
       '/search.json?restrict_sr=on&q=' +
       search;
-    return this.http
-      .get<any[]>(url)
-      .pipe(map(translateRedditResults));
+    return this.http.get<any[]>(url).pipe(map(translateRedditResults));
   }
 }
 

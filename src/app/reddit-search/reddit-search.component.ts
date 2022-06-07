@@ -14,7 +14,6 @@ import {
 import { RedditResult } from '../interfaces/result';
 
 import { LogService } from '../loggers/log.service';
-
 import {
   RedditImageSearchService
 } from '../services/reddit-search.service';
@@ -39,10 +38,13 @@ export class RedditSearchComponent {
     ris: RedditImageSearchService,
     private logger: LogService
   ) {
+
+    // start with a default 'aww' value
     const validSubReddit = this.subReddit.valueChanges.pipe(
       startWith<string>(this.subReddit.value as string)
     );
 
+    // there is no initial search value, awaiting user input
     const validSearch = this.search.valueChanges.pipe(
       startWith<string>(this.search.value as string),
       map(search => search.trim()),
@@ -51,14 +53,13 @@ export class RedditSearchComponent {
       filter(search => search !== '')
     );
 
+    // combineLatest is a Creation Operator - combine the above 2 observables
     this.results = combineLatest([validSubReddit, validSearch]).pipe(
       // This logs the user's intended search
       tap(search => this.logger.log('Search for: ' + search)),
       // take an input observable, return a different observable
       switchMap(([subReddit, search]) =>
         ris.search(subReddit, search).pipe(
-          // The following would log the actual request
-          // tap(search => this.logger.log('Search for: ' + search)),
           retry(3),
           // Clear previous entries while waiting
           startWith([])

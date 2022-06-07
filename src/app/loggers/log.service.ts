@@ -6,6 +6,6 @@ import { LogHandler } from './log-handler';
 export class LogService {
   constructor(@Inject(LogHandler) private loggers: LogHandler[]) {}
   log(message: string) {
-    this.loggers.forEach(logger => logger.log(message));
+    this.loggers.forEach((logger) => logger.log(message));
   }
 }
