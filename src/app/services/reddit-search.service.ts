@@ -17,14 +17,18 @@ export class RedditImageSearchService {
       subReddit +
       '/search.json?restrict_sr=on&q=' +
       search;
-    return this.http.get<any[]>(url).pipe(map(translateRedditResults));
+    const searchResults = this.http
+      .get<any[]>(url)
+      .pipe(map(translateRedditResults));
+    console.log('search results: ', searchResults.subscribe(x => console.log(x)));
+    return searchResults;
   }
 }
 
 function translateRedditResults(items: any): RedditResult[] {
   // This function doesn't know anything about HTTP or Observable; it just
   // manages the messy shape of this API's data return layout.
-
+  console.log('search result items: ', items);
   return flatMap(
     items.data.children,
     (item: Record<string, string>): RedditResult[] => {
@@ -33,7 +37,7 @@ function translateRedditResults(items: any): RedditResult[] {
         if (data) {
           const thumbnail = data['thumbnail'];
           const title = data['title'];
-          if (thumbnail.startsWith('http')) {
+          if (thumbnail.startsWith('https')) {
             return [{ thumbnail, title }];
           }
         }
