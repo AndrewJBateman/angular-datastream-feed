@@ -33,7 +33,7 @@
 
 ## :signal_strength: Technologies
 
-* [Angular framework v15](https://angular.io/)
+* [Angular framework v16](https://angular.io/)
 * [RxJS v7](https://rxjs.dev/) Reactive Extensions Library for JavaScript
 * [reddit API documentation](https://www.reddit.com/dev/api/)
 
@@ -80,4 +80,4 @@
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: `gomezbateman@yahoo.com`
